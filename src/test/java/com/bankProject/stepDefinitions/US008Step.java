@@ -40,6 +40,7 @@ public class US008Step {
 
     @Then("Kendi hesap sayfasindaki password secenegine tiklar.")
     public void kendi_hesap_sayfasindaki_password_secenegine_tiklar() {
+        ReusableMethods.waitForClickablility(accountPage.accountIcon , 10);
         accountPage.accountIcon.click();
         accountPage.passwordInAccountIcon.click();
     }
@@ -71,6 +72,6 @@ public class US008Step {
 
     @And("Sayfayi kapatir.")
     public void sayfayiKapatir() {
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
 }
