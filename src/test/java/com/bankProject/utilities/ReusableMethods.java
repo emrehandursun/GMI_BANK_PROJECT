@@ -5,12 +5,16 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class ReusableMethods {
 
@@ -42,14 +46,7 @@ public class ReusableMethods {
         defaultPage.hotelRoomsLinki.click();
     }*/
 
-    public static void waitFor(int sec) {
-        try {
-            Thread.sleep((long)(sec * 1000));
-        } catch (InterruptedException var2) {
-            var2.printStackTrace();
-        }
 
-    }
 
     public static void scrollTo(WebElement element) {
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor)Driver.getDriver();
@@ -57,7 +54,6 @@ public class ReusableMethods {
         waitFor(2);
     }
 
-}
 
     //======change the color of element and flash====//
     public void changeColor(String color, WebElement element) {
