@@ -15,4 +15,9 @@ public class MainPage {
     @FindBy(linkText = "Home")
     public WebElement homeLink;
 
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement accountIcon;
+
+    @FindBy(xpath = "//a[@id='login-item']")
+    public WebElement signIn;
 }
