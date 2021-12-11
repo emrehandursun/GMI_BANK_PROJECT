@@ -22,8 +22,6 @@ public class ConfigReader {
         }
     }
 
-    // 3- test class'larindan configReader class'ina ulasip yukaridaki islemleri
-    //    yapmamizi saglayacak bir method olusturacagiz
     public static String getProperty(String key){
 
         String value=properties.getProperty(key);
