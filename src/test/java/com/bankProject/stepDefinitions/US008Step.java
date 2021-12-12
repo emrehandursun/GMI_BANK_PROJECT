@@ -1,16 +1,9 @@
 package com.bankProject.stepDefinitions;
 
-
-import com.bankProject.pages.AccountPage;
-import com.bankProject.pages.MainPage;
-import com.bankProject.pages.PasswordPage;
-import com.bankProject.utilities.ConfigReader;
-import com.bankProject.utilities.Driver;
-import com.bankProject.utilities.ReusableMethods;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
+import com.bankProject.pages.*;
+import com.bankProject.utilities.*;
+import io.cucumber.java.en.*;
+import java.util.*;
 import static org.testng.AssertJUnit.*;
 
 public class US008Step {
@@ -58,10 +51,13 @@ public class US008Step {
                 , passwordPage.newPasswordShouldBeDifferentFromTheCurrentOne.isDisplayed());
     }
 
-    @Then("Yeni sifrede en az bir tane kucuk harf kullanir.")
-    public void yeniSifredeEnAzBirTaneKucukHarfKullanir() {
+
+    @Then("Yeni sifrede en az bir tane {string} kullanir.")
+    public void yeniSifredeEnAzBirTaneKullanir(String kucukHarf) {
         passwordPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("GMIBankValidPassword"));
-        passwordPage.newPasswordBox.sendKeys(ConfigReader.getProperty("KucukHarfYeniSifre"));
+        passwordPage.newPasswordBox.sendKeys(kucukHarf);
+
+
     }
 
     @Then("Yeni sifrenin guvenlik seviye tablo rengi kirmizi olur.")
@@ -74,4 +70,14 @@ public class US008Step {
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
+
+
+    @Then("Guvenlik seviyesi tablo rengi turuncu olur.")
+    public void guvenlikSeviyesiTabloRengiTuruncuOlur() {
+        assertTrue("Parola guclulugu turuncu seviyede degil!" , passwordPage.passwordStrengthOrange.isDisplayed());
+
+    }
+
+
+
 }
