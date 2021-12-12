@@ -29,4 +29,10 @@ public class PasswordPage {
     @FindBy (xpath = "//li[@style='background-color: rgb(255, 0, 0);']")
     public WebElement passwordStrengthRed;
 
+    @FindBy (xpath = "//li[@style='background-color: rgb(221, 221, 221);']")
+    public WebElement passwordStrengthOrange;
+
+    @FindBy (xpath = "//li[@style='background-color: rgb(255, 255, 0);']")
+    public WebElement passwordStrengthYellow;
+
 }

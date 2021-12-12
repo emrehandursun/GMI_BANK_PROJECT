@@ -3,6 +3,7 @@ package com.bankProject.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -16,18 +17,11 @@ public class Driver {
     }
 
     private static WebDriver driver;
-    // driver'i baska class'lardan sadece Driver class ismi ile cagirabilmek icin STATIC yaptik
-    // henuz bu driver ile ilgili ayarlar yapmadigim icin baska class'lar bunu yanlislikla kullanmasin diye
-    // erisimi private yaptik (sadece bu class'in kullanimina acik yaptik)
 
     public static WebDriver getDriver(){
         if (driver==null){
-            // if'i bu method her calistiginda yeni bir driver olusturmamasi icin kullaniyorruz
-            // if driver'i kontrol edecek eger bir deger atamasi yapildiysa yeni bir driver olusturmayacak
             switch (ConfigReader.getProperty("browser")) {
-                // case'i driver'i istedigimiz browser'da calistirmak icin kullaniyoruz
-                // configuration.properties dosyasinda browser olarak ne yazdiksa tum testlerimiz o browser'da calisacak
-                // browser secimi yapilmadiysa default olarak chrome devreye girecek
+
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -43,6 +37,10 @@ public class Driver {
                 case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
+                    break;
+                case "headless-chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
                 default:
                     WebDriverManager.chromedriver().setup();
