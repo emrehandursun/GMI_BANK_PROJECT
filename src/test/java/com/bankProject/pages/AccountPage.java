@@ -28,4 +28,16 @@ public class AccountPage {
     @FindBy(xpath = "//span[text()='Password']")
     public WebElement passwordInAccountIcon;
 
+    @FindBy(xpath = "//span[text()='My Operations']")
+    public WebElement myOperationsIcon;
+
+    @FindBy(xpath = "//span[text()='Manage Accounts']")
+    public WebElement manageAccountsButton;
+
+    @FindBy(xpath = "//span[text()='Accounts']")
+    public WebElement accountsSayfasiYazisiElementi;
+
+    @FindBy(xpath = "//span[text()='Balance']")
+    public WebElement balanceSutunuYazisiElementi;
+
 }

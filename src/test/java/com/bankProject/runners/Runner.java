@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
 //                "junit:target/xml-report/cucumber.xml"},
         features="src/test/resources/features",
         glue="com.bankProject.stepDefinitions",
-        tags="  @tc_004"  ,
+        tags= "" ,
 
-        dryRun= false
+        dryRun= true
 
 )
 public class Runner {
