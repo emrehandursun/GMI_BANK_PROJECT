@@ -3,7 +3,7 @@ package com.bankProject.stepDefinitions;
 import com.bankProject.pages.*;
 import com.bankProject.utilities.*;
 import io.cucumber.java.en.*;
-import java.util.*;
+
 import static org.testng.AssertJUnit.*;
 
 public class US008Step {
@@ -33,7 +33,7 @@ public class US008Step {
 
     @Then("Kendi hesap sayfasindaki password secenegine tiklar.")
     public void kendi_hesap_sayfasindaki_password_secenegine_tiklar() {
-        ReusableMethods.waitForClickablility(accountPage.accountIcon , 10);
+        ReusableMethods.waitForClickablility(accountPage.accountIcon, 10);
         accountPage.accountIcon.click();
         accountPage.passwordInAccountIcon.click();
     }
@@ -51,33 +51,30 @@ public class US008Step {
                 , passwordPage.newPasswordShouldBeDifferentFromTheCurrentOne.isDisplayed());
     }
 
-
     @Then("Yeni sifrede en az bir tane {string} kullanir.")
     public void yeniSifredeEnAzBirTaneKullanir(String kucukHarf) {
         passwordPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("GMIBankValidPassword"));
         passwordPage.newPasswordBox.sendKeys(kucukHarf);
-
-
     }
 
     @Then("Yeni sifrenin guvenlik seviye tablo rengi kirmizi olur.")
     public void yeniSifreninGuvenlikSeviyeTabloRengiKirmiziOlur() {
         assertTrue("Parola guclulugu kirmizi seviyede degil", passwordPage.passwordStrengthRed.isDisplayed());
+    }
 
+    @Then("Guvenlik seviyesi tablo rengi turuncu olur.")
+    public void guvenlikSeviyesiTabloRengiTuruncuOlur() {
+        assertTrue("Parola guclulugu turuncu seviyede degil!", passwordPage.passwordStrengthOrange.isDisplayed());
+    }
+
+    @Then("Guvenlik seviyesi tablo rengi sari olur.")
+    public void guvenlikSeviyesiTabloRengiSariOlur() {
+        assertTrue("Parola guclulugu sari seviyede degil!", passwordPage.passwordStrengthYellow.isDisplayed());
     }
 
     @And("Sayfayi kapatir.")
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
-
-
-    @Then("Guvenlik seviyesi tablo rengi turuncu olur.")
-    public void guvenlikSeviyesiTabloRengiTuruncuOlur() {
-        assertTrue("Parola guclulugu turuncu seviyede degil!" , passwordPage.passwordStrengthOrange.isDisplayed());
-
-    }
-
-
 
 }

@@ -23,9 +23,6 @@ public class PasswordPage {
     @FindBy (xpath = "//div[text()='New password should be different from the current one.']")
     public WebElement newPasswordShouldBeDifferentFromTheCurrentOne;
 
-    @FindBy (xpath = "//button[@type='submit']")
-    public WebElement saveButton;
-
     @FindBy (xpath = "//li[@style='background-color: rgb(255, 0, 0);']")
     public WebElement passwordStrengthRed;
 
@@ -34,5 +31,11 @@ public class PasswordPage {
 
     @FindBy (xpath = "//li[@style='background-color: rgb(255, 255, 0);']")
     public WebElement passwordStrengthYellow;
+
+    @FindBy (xpath = "//li[@style='style=background-color: rgb(0, 255, 0);']")
+    public WebElement passwordStrengthGreen;
+
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement saveButton;
 
 }
