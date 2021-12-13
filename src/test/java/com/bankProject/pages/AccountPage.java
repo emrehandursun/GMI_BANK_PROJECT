@@ -40,4 +40,32 @@ public class AccountPage {
     @FindBy(xpath = "//span[text()='Balance']")
     public WebElement balanceSutunuYazisiElementi;
 
+    @FindBy(xpath = "(//span[text()='View'])[2]")
+    public WebElement viewButonu2;
+
+    @FindBy(xpath = "(//a[@class='btn btn-success btn-sm'])[2]")
+    public WebElement viewButonu2HesapIdElementi;
+
+    @FindBy(xpath = "(//span[text()='View'])[4]")
+    public WebElement viewButonu4;
+
+    @FindBy(xpath = "(//a[@class='btn btn-success btn-sm'])[4]")
+    public WebElement viewButonu4HesapIdElementi;
+
+    @FindBy(xpath = "(//span[text()='View'])[5]")
+    public WebElement viewButonu5;
+
+    @FindBy(xpath = "(//a[@class='btn btn-success btn-sm'])[5]")
+    public WebElement viewButonu5HesapIdElementi;
+
+    @FindBy(xpath = "//b[text()]")
+    public WebElement viewButonu2HesapId;
+
+    @FindBy(xpath = "//b[text()]")
+    public WebElement viewButonu4HesapId;
+
+    @FindBy(xpath = "//b[text()]")
+    public WebElement viewButonu5HesapId;
+
+
 }
