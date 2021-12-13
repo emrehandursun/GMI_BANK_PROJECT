@@ -1,6 +1,7 @@
 @us_008
 Feature: US_008 Ana Sayfadaki sifre bolumu guncellenebilir olmalidir.
 
+
   @tc_001
   Scenario: TC_001 Sifre degistirilirken eski sifre kullanilmamalidir.
     When Kullanici Gmi Bank sayfasina gider
@@ -10,6 +11,7 @@ Feature: US_008 Ana Sayfadaki sifre bolumu guncellenebilir olmalidir.
     Then Mevcut sifresini ve yeni sifresini girer.
     And Mevcut sifre ile ayni yeni sifre girdiginde New password should be different from the current one. uyarisi alir.
     And  Sayfayi kapatir.
+
 
   @tc_002
   Scenario Outline: TC_002 Yeni sifre en az 1 kucuk harf icermeli ve guvenlik seviye tablosunun kullanıma gore degistigi gorulmelidir.
@@ -43,6 +45,7 @@ Feature: US_008 Ana Sayfadaki sifre bolumu guncellenebilir olmalidir.
       | d          | D          |
       | den        | DEN        |
       | deneme     | DENEME     |
+
 
   @tc_004
   Scenario Outline: TC_004 Yeni sifre en az 1 rakam  icermeli ve guvenlik seviye tablosunun kullanıma gore degistigi gorulmelidir.

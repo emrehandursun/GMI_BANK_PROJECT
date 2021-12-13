@@ -52,9 +52,9 @@ public class US008Step {
     }
 
     @Then("Yeni sifrede en az bir tane {string} kullanir.")
-    public void yeniSifredeEnAzBirTaneKullanir(String kucukHarf) {
+    public void yeniSifredeEnAzBirTaneKullanir(String value) {
         passwordPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("GMIBankValidPassword"));
-        passwordPage.newPasswordBox.sendKeys(kucukHarf);
+        passwordPage.newPasswordBox.sendKeys(value);
     }
 
     @Then("Yeni sifrenin guvenlik seviye tablo rengi kirmizi olur.")
