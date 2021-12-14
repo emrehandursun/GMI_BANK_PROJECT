@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 //                "junit:target/xml-report/cucumber.xml"},
         features="src/test/resources/features",
         glue="com.bankProject.stepDefinitions",
-        tags= "@US_015" ,
+        tags= "@tc_005" ,
 
         dryRun= false
 

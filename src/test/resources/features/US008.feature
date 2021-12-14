@@ -65,3 +65,36 @@ Feature: US_008 Ana Sayfadaki sifre bolumu guncellenebilir olmalidir.
       | d          | D          | 1     |
       | den        | DEN        | 123   |
       | deneme     | DENEME     | 12345 |
+
+
+    @tc_005
+    Scenario Outline: TC_005 Yeni şifre en az 1 özel karakter içermeli ve güvenlik seviye tablosunun kullanıma göre değiştiği görülmelidir.
+      When Kullanici Gmi Bank sayfasina gider
+      Then Sign In butonuna tiklar.
+      Then Username ve password bilgilerini girer.
+      Then Kendi hesap sayfasindaki password secenegine tiklar.
+      Then Yeni sifrede en az bir tane "<kucuk harf>" kullanir.
+      Then Yeni sifrenin guvenlik seviye tablo rengi kirmizi olur.
+      Then Yeni sifrede en az bir tane "<buyuk harf>" kullanir.
+      Then Guvenlik seviyesi tablo rengi turuncu olur.
+      Then Yeni sifrede en az bir tane "<rakam>" kullanir.
+      Then Guvenlik seviyesi tablo rengi sari olur.
+      Then Yeni sifrede en az bir tane "<ozel karakter>" kullanir.
+      Then Guvenlik seviyesi tablo rengi acik yesil olur.
+      And  Sayfayi kapatir.
+
+      Examples:
+        | kucuk harf | buyuk harf | rakam | ozel karakter |
+        | den        | D          | 1     | *         |
+
+
+
+
+
+
+
+
+
+
+
+
