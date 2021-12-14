@@ -52,9 +52,9 @@ public class US008Step {
     }
 
     @Then("Yeni sifrede en az bir tane {string} kullanir.")
-    public void yeniSifredeEnAzBirTaneKullanir(String kucukHarf) {
-        passwordPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("GMIBankValidPassword"));
-        passwordPage.newPasswordBox.sendKeys(kucukHarf);
+    public void yeniSifredeEnAzBirTaneKullanir(String value) {
+        //passwordPage.currentPasswordBox.sendKeys(ConfigReader.getProperty("GMIBankValidPassword"));
+        passwordPage.newPasswordBox.sendKeys(value);
     }
 
     @Then("Yeni sifrenin guvenlik seviye tablo rengi kirmizi olur.")
@@ -70,6 +70,11 @@ public class US008Step {
     @Then("Guvenlik seviyesi tablo rengi sari olur.")
     public void guvenlikSeviyesiTabloRengiSariOlur() {
         assertTrue("Parola guclulugu sari seviyede degil!", passwordPage.passwordStrengthYellow.isDisplayed());
+    }
+
+    @Then("Guvenlik seviyesi tablo rengi acik yesil olur.")
+    public void guvenlikSeviyesiTabloRengiAcikYesilOlur() {
+        assertTrue("Parola guclulugu acik yesil seviyede degil!", passwordPage.passwordStrengthlightGreen.isDisplayed());
     }
 
     @And("Sayfayi kapatir.")

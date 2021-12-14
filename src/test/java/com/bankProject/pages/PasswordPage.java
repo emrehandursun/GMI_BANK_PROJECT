@@ -35,6 +35,9 @@ public class PasswordPage {
     @FindBy (xpath = "//li[@style='style=background-color: rgb(0, 255, 0);']")
     public WebElement passwordStrengthGreen;
 
+    @FindBy (xpath = "//li[@style='background-color: rgb(153, 255, 0);']")
+    public WebElement passwordStrengthlightGreen;
+
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement saveButton;
 
